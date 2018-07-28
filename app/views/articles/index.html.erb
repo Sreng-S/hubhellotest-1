@@ -1,0 +1,25 @@
+<div class="navbar">
+  <h1 class="level-item has-text-centered">Listing articles</h1>
+</div>
+<%= link_to 'New Article', new_article_path, class: "button is-primary is-rounded" %>
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Created_at</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title.dasherize %></td>
+        <td><%= article.text %></td>
+        <td><%= article.created_at.to_date %></td>
+        <td><%= link_to ('<i class="fas fa-eye">Show</i>').html_safe, article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: hubhelloTest_production
-  username: hubhelloTest
+  username: horse
   password: <%= ENV['HUBHELLOTEST_DATABASE_PASSWORD'] %>
